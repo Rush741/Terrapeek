@@ -1,0 +1,43 @@
+<%- include("./partials/header.ejs") %>
+<!-- <h2>Search any country:</h2> -->
+<form action="/country" method="post">
+    <label for="">Search Any Country:</label><br><br>
+    <input id="country-input" name="country" placeholder="country name">
+    <button type="submit">Search</button>
+</form>
+<p></p>
+
+<% if(locals.error) { %>
+<p><%=error%></p>
+<% } %>
+
+<% if(locals.flag) { %>
+<img height="40" src="<%=flag%>">
+<% } %>
+
+<% if(locals.capital) { %>
+<p>Capital: <%=capital%></p>
+<% } %>
+<% if(locals.population) { %>
+<p>Population: <%=population%></p>
+<% } %>
+<% if(locals.region) { %>
+<p>Region: <%=region%></p>
+<% } %>
+<% if(locals.continent) { %>
+<p>Continent: <%=continent%></p>
+<% } %>
+<% if(locals.currency) { %>
+<p>Currency: <%=currency%></p>
+<% } %>
+
+
+
+
+
+
+
+
+
+</main>
+<%- include("./partials/footer.ejs") %>
