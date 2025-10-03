@@ -21,8 +21,8 @@ TerraPeak provides details like **capital, population, region, continent, curren
 - **Styling**: CSS / TailwindCSS  
 
 ---
-## 📂 Folder Structure
 
+## 📂 Folder Structure
 Terrapeek/
 ├── public/             # Static files (CSS, images, etc.)
 │   └── styles.css
@@ -39,9 +39,7 @@ Terrapeek/
 ├── .gitignore          # Git ignore rules
 └── README.md           # Project documentation
 
-
 ---
 
-🙌 Contribution
-
+## 🙌 Contribution
 Contributions are welcome! Feel free to fork this repo and submit a pull request.
