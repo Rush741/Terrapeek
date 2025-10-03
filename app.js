@@ -12,6 +12,19 @@ app.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
+// Helper function to format population
+function formatPopulation(population) {
+    if (population >= 10000000) {
+        return `${(population / 10000000).toFixed(1)} Crore`;
+    } else if (population >= 1000000) {
+        return `${(population / 1000000).toFixed(1)} Million`;
+    } else if (population >= 1000) {
+        return `${(population / 1000).toFixed(1)} Thousand`;
+    } else {
+        return population.toString();
+    }
+}
+
 app.post("/country", async (req, res) => {
     console.log(req.body);
     try {
@@ -26,12 +39,18 @@ app.post("/country", async (req, res) => {
             flag: content[0].flags.png,
             capital: content[0].capital[0],
             population: content[0].population,
+            populationFormatted: formatPopulation(content[0].population),
             region: content[0].subregion,
             continent: content[0].continents[0],
             currency: currency,
             });
     } catch (error) {
-        res.render("index.ejs", {error: JSON.stringify(error.response.data || error.message)});
+        // Check if it's a 404 error (country not found)
+        if (error.response && error.response.status === 404) {
+            res.render("index.ejs", {error: "Invalid country name. Please enter a valid country name."});
+        } else {
+            res.render("index.ejs", {error: "Invalid country name. Please enter a valid country name."});
+        }
     }
 });
 
