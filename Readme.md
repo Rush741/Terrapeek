@@ -22,24 +22,5 @@ TerraPeak provides details like **capital, population, region, continent, curren
 
 ---
 
-## 📂 Folder Structure
-Terrapeek/
-├── public/             # Static files (CSS, images, etc.)
-│   └── styles.css
-│
-├── views/              # EJS templates
-│   ├── partials/       # Reusable partials
-│   │   ├── footer.ejs
-│   │   ├── header.ejs
-│   └── index.ejs       # Main template
-│
-├── app.js              # Main Express app
-├── package.json        # Project metadata & dependencies
-├── package-lock.json   # Dependency lock file
-├── .gitignore          # Git ignore rules
-└── README.md           # Project documentation
-
----
-
 ## 🙌 Contribution
 Contributions are welcome! Feel free to fork this repo and submit a pull request.
